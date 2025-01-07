@@ -1,4 +1,0 @@
-Mobil
-Kendaraan
-SepedaMotor
-Main
