@@ -1,0 +1,61 @@
+package abstraction;
+
+// Kelas Abstrak
+abstract class Kendaraan {
+    // Atribut umum
+    protected String merek;
+    protected String warna;
+
+    // Konstruktor
+    public Kendaraan(String merek, String warna) {
+        this.merek = merek;
+        this.warna = warna;
+    }
+
+    // Metode abstrak
+    public abstract void berjalan();
+
+    // Metode biasa
+    public void info() {
+        System.out.println("Merek: " + merek);
+        System.out.println("Warna: " + warna);
+    }
+}
+
+// Kelas konkret yang mewarisi Kendaraan
+class Mobil extends Kendaraan {
+    public Mobil(String merek, String warna) {
+        super(merek, warna);
+    }
+
+    @Override
+    public void berjalan() {
+        System.out.println("Mobil " + merek + " sedang berjalan di jalan.");
+    }
+}
+
+// Kelas konkret yang mewarisi Kendaraan
+class SepedaMotor extends Kendaraan {
+    public SepedaMotor(String merek, String warna) {
+        super(merek, warna);
+    }
+
+    @Override
+    public void berjalan() {
+        System.out.println("Sepeda motor " + merek + " sedang melaju.");
+    }
+}
+
+// Kelas utama untuk menjalankan program
+public class Main {
+    public static void main(String[] args) {
+        Kendaraan mobil = new Mobil("Toyota", "Merah");
+        Kendaraan sepedaMotor = new SepedaMotor("Yamaha", "Hitam");
+
+        mobil.info();
+        mobil.berjalan();
+
+        sepedaMotor.info();
+        sepedaMotor.berjalan();
+    }
+}
